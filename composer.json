@@ -1,6 +1,6 @@
 {
-  "name": "violet/streaming-json-encoder",
-  "description": "Library for iteratively encoding large JSON documents piece by piece",
+  "name": "lizmap/streaming-json-encoder",
+  "description": "Library for iteratively encoding large JSON documents piece by piece (maintained fork)",
   "license": "MIT",
   "type": "library",
   "keywords": [
@@ -14,9 +14,13 @@
       "name": "Riikka Kalliomäki",
       "email": "riikka.kalliomaki@gmail.com",
       "homepage": "http://riimu.net"
+    },
+    {
+      "name": "Laurent Jouanneau",
+      "email": "ljouanneau@3liz.com",
+      "homepage": "https://3liz.com"
     }
   ],
-  "homepage": "http://violet.riimu.net",
   "require": {
     "php": ">=8.0",
     "psr/http-message": "^2.0"

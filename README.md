@@ -21,16 +21,23 @@ compatible stream to use with frameworks and HTTP requests.
 
 The API documentation is available at: http://violet.riimu.net/api/streaming-json-encoder/
 
-[![CI](https://img.shields.io/github/workflow/status/violet-php/streaming-json-encoder/CI/main?style=flat-square)](https://github.com/violet-php/streaming-json-encoder/actions)
-[![Scrutinizer](https://img.shields.io/scrutinizer/quality/g/violet-php/streaming-json-encoder/main?style=flat-square)](https://scrutinizer-ci.com/g/violet-php/streaming-json-encoder/)
-[![codecov](https://img.shields.io/codecov/c/github/violet-php/streaming-json-encoder/main?style=flat-square)](https://codecov.io/gh/violet-php/streaming-json-encoder)
-[![Packagist](https://img.shields.io/packagist/v/violet/streaming-json-encoder.svg?style=flat-square)](https://packagist.org/packages/violet/streaming-json-encoder)
+## About this project ##
+
+This library is a fork of [violet-php/streaming-json-encoder](https://github.com/violet-php/streaming-json-encoder).
+As of October 2026, the original library has not been maintained since 2022.
+
+This fork aims to fix compatibility issues with some dependencies and related projects that have been evolved since 2022
+(like psr/http-message, GuzzleHttp..). It fixes also compatibility with recent version of PHP.
+
+Support of PHP 7 and lower has been dropped.
+
+Classes namespace is still `Violet\StreamingJsonEncoder`. 
 
 ## Requirements ##
 
-  * The minimum supported PHP version is 5.6
+  * The minimum supported PHP version is 8.0
   * The library depends on the following external PHP libraries:
-    * [psr/http-message](https://packagist.org/packages/psr/http-message) (`^1.0`)
+    * [psr/http-message](https://packagist.org/packages/psr/http-message) (`^2.0`)
 
 ## Installation ##
 
@@ -48,7 +55,7 @@ these two steps:
      file in you project root and you can run the following command:
 
      ```
-     php composer.phar require "violet/streaming-json-encoder:^1.1"
+     php composer.phar require "lizmap/streaming-json-encoder:^1.1"
      ```
 
 After installing this library via Composer, you can load the library by
@@ -64,7 +71,7 @@ project and running the `composer install` command:
 ```json
 {
     "require": {
-        "violet/streaming-json-encoder": "^1.1"
+        "lizmap/streaming-json-encoder": "^1.1"
     }
 }
 ```
@@ -72,7 +79,7 @@ project and running the `composer install` command:
 ### Manual installation ###
 
 If you do not wish to use Composer to load the library, you may also download
-the library manually by downloading the [latest release](https://github.com/violet-php/streaming-json-encoder/releases/latest)
+the library manually by downloading the [latest release](https://github.com/3liz/streaming-json-encoder/releases/latest)
 and extracting the `src` folder to your project. You may then include the
 provided `src/autoload.php` file to load the library classes.
 
@@ -283,5 +290,6 @@ options also have additional effects on the encoders:
 ## Credits ##
 
 This library is Copyright (c) 2017-2022 Riikka Kalliomäki.
+Maintained by [3liz](https://3liz.com) since 2026.
 
 See LICENSE for license and copying information.

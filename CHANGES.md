@@ -1,5 +1,12 @@
 # Changelog #
 
+## v2.0.0 (2026-10-15)
+
+* Fork from https://github.com/violet-php/streaming-json-encoder (unmaintained)
+  and new package name `lizmap/streaming-json-encoder`
+* Fix compatibility with psr/http-message 2.0 (and GuzzleHttp 8+)
+* Fix compatibility with PHP 8.2 to 8.5 and drop support for PHP 7 and lower
+
 ## v1.1.5 (2022-12-09) ##
 
 * Add support for PHP 8.2

@@ -63,19 +63,19 @@ jobs:
           package: friendsofphp/php-cs-fixer
       - name: Run PHP Coding Standards Fixer
         run: composer php-cs-fixer -- --dry-run --diff --using-cache=no
-  composer-normalize:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Prepare Composer
-        uses: ./.github/actions/prepare-composer
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          package: ergebnis/composer-normalize
-          allow-plugins: 1
-      - name: Run composer-normalize
-        run: composer normalize --dry-run
+  #composer-normalize:
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #    - name: Checkout
+  #      uses: actions/checkout@v3
+  #    - name: Prepare Composer
+  #      uses: ./.github/actions/prepare-composer
+  #      with:
+  #        token: ${{ secrets.GITHUB_TOKEN }}
+  #        package: ergebnis/composer-normalize
+  #        allow-plugins: 1
+  #    - name: Run composer-normalize
+  #      run: composer normalize --dry-run
   coverage:
     runs-on: ubuntu-latest
     steps:

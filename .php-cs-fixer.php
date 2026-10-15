@@ -24,7 +24,7 @@ return (new PhpCsFixer\Config())
         'dir_constant' => true,
         'ereg_to_preg' => true,
         'function_to_constant' => true,
-        'function_typehint_space' => true,
+
         'heredoc_to_nowdoc' => true,
         'include' => true,
         'is_null' => true,
@@ -33,7 +33,7 @@ return (new PhpCsFixer\Config())
         'multiline_whitespace_before_semicolons' => true,
         'modernize_types_casting' => true,
         'native_function_casing' => true,
-        'new_with_braces' => true,
+        'new_with_parentheses' => true,
         'no_alias_functions' => true,
         'no_blank_lines_after_class_opening' => true,
         'no_blank_lines_after_phpdoc' => true,
@@ -93,7 +93,8 @@ return (new PhpCsFixer\Config())
         'ternary_operator_spaces' => true,
         'trailing_comma_in_multiline' => true,
         'trim_array_spaces' => true,
-        'visibility_required' => ['elements' => ['property', 'method']],
+        'type_declaration_spaces' => true,
+        'modifier_keywords' => ['elements' => ['property', 'method']],
         'whitespace_after_comma_in_array' => true,
     ])
     ->setFinder($finder);

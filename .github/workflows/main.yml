@@ -11,9 +11,20 @@ jobs:
   PHPUnit:
     strategy:
       matrix:
-        operating-system: ["ubuntu-latest", "windows-latest", "macos-latest"]
-        php-version: ["8.0", "8.1", "8.2", "8.3", "8.4", "8.5"]
-    runs-on: ${{ matrix.operating-system }}
+        include:
+          - php-version: "8.0"
+            php-unit: "9.6.38"
+          - php-version: "8.1"
+            php-unit: "9.6.38"
+          - php-version: "8.2"
+            php-unit: "10.5.66"
+          - php-version: "8.3"
+            php-unit: "10.5.66"
+          - php-version: "8.4"
+            php-unit: "10.5.66"
+          - php-version: "8.5"
+            php-unit: "10.5.66"
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -23,6 +34,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           php-version: ${{ matrix.php-version }}
           package: phpunit/phpunit
+          package-version: ${{ matrix.php-unit }}
       - name: Run PHPUnit
         run: composer test
   PHP_CodeSniffer:
@@ -74,6 +86,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           package: phpunit/phpunit
+          package-version: "10.5.66"
           coverage: xdebug
       - name: Run PHPUnit with coverage
         run: composer test -- --do-not-cache-result --coverage-clover coverage.xml

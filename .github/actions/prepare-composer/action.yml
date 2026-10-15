@@ -10,6 +10,9 @@ inputs:
   php-version:
     description: "Version for PHP runtime"
     default: "8.5"
+  package-version:
+    description: "Version for the package"
+    default: "*"
   coverage:
     description: "Type of PHP code coverage to set up"
     default: "none"
@@ -26,7 +29,7 @@ runs:
         ini-values: error_reporting=E_ALL
       env:
         GITHUB_TOKEN: ${{ inputs.token }}
-    - run: composer global require --no-install "${{ inputs.package }}:*"
+    - run: composer global require --no-install "${{ inputs.package }}:${{ inputs.package-version }}"
       shell: bash
     - run: composer global config "allow-plugins.${{ inputs.package }}" true
       if: ${{ inputs.allow-plugins == 1 }}
